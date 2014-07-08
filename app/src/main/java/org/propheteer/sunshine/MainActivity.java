@@ -1,16 +1,17 @@
 package org.propheteer.sunshine;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -58,6 +59,20 @@ public class MainActivity extends ActionBarActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+            ArrayList days = new ArrayList();
+            String[] forecastArray = {
+                 "Today - Sunny - 88/63",
+                "Tomorrow - Sunny - 65/90",
+                "Thursday - Hail - 50/50",
+                "August - Apocalyptic - 130/63",
+                "Frune - Giggly - 20/20",
+                "Sunday - Sunday - Sunday",
+                "Friday - Get Down - 25/624"
+            };
+            List<String> weekForecast = new ArrayList<String>(
+                    Arrays.asList(forecastArray));
+            
             return rootView;
         }
     }
